@@ -38,14 +38,17 @@ export default {
     add() {
       this.$router.push('/addproduct');
     },
-    async getProduct() {
-      try {
-        const response = await axios.get('https://scandiweb12.000.pe/display');
-        this.products = response.data;
-      } catch (error) {
-        console.log(error);
-      }
-    },
+ async getProduct() {
+   try {
+      const response = await axios.get('https://scandiweb12.000.pe/display', {
+          withCredentials: true
+      });
+      this.products = response.data;
+   } catch (error) {
+      console.log(error);
+   }
+},
+
     decodeDetails(details) {
       try {
         const parsedDetails = JSON.parse(details);
