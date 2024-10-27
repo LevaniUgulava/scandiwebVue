@@ -18,7 +18,7 @@
         <p>{{ item.sku }}</p>
         <p>{{ item.name }}</p>
         <p>{{ item.price }}$</p>
-        <!-- <p>{{ item.details }}</p> -->
+        <p>{{ item.details }}</p>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@ export default {
     },
     async getProduct() {
       try {
-        const response = await axios.get('https://cors-anywhere.herokuapp.com/http://scandiweb12.000.pe/display');
+        const response = await axios.get('http://localhost:3000/display');
         this.products = response.data;
       } catch (error) {
         console.log(error);
