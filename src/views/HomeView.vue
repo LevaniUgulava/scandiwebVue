@@ -18,7 +18,7 @@
         <p>{{ item.sku }}</p>
         <p>{{ item.name }}</p>
         <p>{{ item.price }}$</p>
-        <p>{{ item.details.weight }}</p>
+        <!-- <p>{{ item.details }}</p> -->
       </div>
     </div>
   </div>
