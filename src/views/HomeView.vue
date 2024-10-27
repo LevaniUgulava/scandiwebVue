@@ -40,7 +40,7 @@ export default {
     },
     async getProduct() {
       try {
-        const response = await axios.get('http://localhost:3000/display');
+        const response = await axios.get('https://cors-anywhere.herokuapp.com/http://scandiweb12.000.pe/display');
         this.products = response.data;
       } catch (error) {
         console.log(error);
