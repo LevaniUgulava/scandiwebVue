@@ -59,7 +59,7 @@ export default {
       }
     },
     async massDelete() {
-      const response = await axios.post('/massdelete', { idarray: this.selectedProducts });
+      const response = await axios.post('https://ad40-80-77-61-57.ngrok-free.app/massdelete', { idarray: this.selectedProducts });
       console.log(response);
       this.getProduct();
     },
