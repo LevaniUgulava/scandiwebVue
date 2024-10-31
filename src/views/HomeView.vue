@@ -40,7 +40,7 @@ export default {
     },
  async getProduct() {
    try {
-    const response = await axios.get("https://scandiweb12.000.pe/display"); 
+    const response = await axios.get("https://ad40-80-77-61-57.ngrok-free.app/display"); 
       this.products = response.data;
    } catch (error) {
       console.log(error);
