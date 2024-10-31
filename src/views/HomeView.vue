@@ -43,7 +43,7 @@ export default {
       const response = await axios.get("https://23c1-80-77-61-57.ngrok-free.app/display", {
          headers: { 'Accept': 'application/json' } // Force JSON response
       });
-      this.products = response.data; // Only assign JSON data
+      this.products = response; // Only assign JSON data
       console.log(this.products); // Verify the structure of the returned data
    } catch (error) {
       console.log(error);
