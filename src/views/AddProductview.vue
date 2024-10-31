@@ -113,7 +113,7 @@ export default {
     type: this.selectedType,
     details: details
 });
-        const response = await axios.post('https://23c1-80-77-61-57.ngrok-free.app/create',{
+        const response = await axios.post('https://66a2-80-77-61-57.ngrok-free.app/create',{
           sku:this.inputsku,
           name:this.inputname,
           price:this.inputprice,
