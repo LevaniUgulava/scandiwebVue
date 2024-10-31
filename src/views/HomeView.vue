@@ -42,7 +42,7 @@ export default {
    try {
     const response = await axios.get("https://23c1-80-77-61-57.ngrok-free.app/display"); 
     console.log(response);
-      this.products = response.data;
+      this.products = response;
    } catch (error) {
       console.log(error);
    }
