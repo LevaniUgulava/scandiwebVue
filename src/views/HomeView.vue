@@ -38,15 +38,18 @@ export default {
     add() {
       this.$router.push('/addproduct');
     },
- async getProduct() {
+    async getProduct() {
    try {
-    const response = await axios.get("https://23c1-80-77-61-57.ngrok-free.app/display"); 
-    console.log(response);
-      this.products = response;
+      const response = await axios.get("https://23c1-80-77-61-57.ngrok-free.app/display", {
+         headers: { 'Accept': 'application/json' } // Force JSON response
+      });
+      this.products = response.data; // Only assign JSON data
+      console.log(this.products); // Verify the structure of the returned data
    } catch (error) {
       console.log(error);
    }
 },
+
 
     decodeDetails(details) {
       try {
