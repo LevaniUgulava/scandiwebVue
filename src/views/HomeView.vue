@@ -40,7 +40,7 @@ export default {
     },
  async getProduct() {
    try {
-    const response = await axios.get("https://ad40-80-77-61-57.ngrok-free.app/display"); 
+    const response = await axios.get("https://23c1-80-77-61-57.ngrok-free.app/display"); 
       this.products = response.data;
    } catch (error) {
       console.log(error);
@@ -59,7 +59,7 @@ export default {
       }
     },
     async massDelete() {
-      const response = await axios.post('https://ad40-80-77-61-57.ngrok-free.app/massdelete', { idarray: this.selectedProducts });
+      const response = await axios.post('https://23c1-80-77-61-57.ngrok-free.app/massdelete', { idarray: this.selectedProducts });
       console.log(response);
       this.getProduct();
     },
