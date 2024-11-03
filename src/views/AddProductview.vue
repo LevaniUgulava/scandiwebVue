@@ -53,8 +53,8 @@
           <input type="number" id="width" v-model="inputwidth"/>
           <span v-if="errors.width" class="error">{{ errors.width }}</span>
 
-          <label for="lenght">Length:</label>
-          <input type="number" id="lenght" v-model="inputlenght"/>
+          <label for="length">Length:</label>
+          <input type="number" id="length" v-model="inputlenght"/>
           <span v-if="errors.length" class="error">{{ errors.length }}</span>
         </div>
       </form>
