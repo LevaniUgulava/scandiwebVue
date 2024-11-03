@@ -33,28 +33,28 @@
 
         <!-- Conditional Fields -->
         <div v-if="selectedType == 'DVD'" class="conditional-field">
-          <label>Size:</label>
-          <input type="number" v-model="inputsize"/>
+          <label for="size" >Size:</label>
+          <input type="number" id="size" v-model="inputsize"/>
           <span v-if="errors.size" class="error">{{ errors.size }}</span>
         </div>
 
         <div v-if="selectedType == 'Book'" class="conditional-field">
-          <label>Weight:</label>
-          <input type="number" v-model="inputweight" />
+          <label for="weight">Weight:</label>
+          <input type="number" id="weight" v-model="inputweight" />
           <span v-if="errors.weight" class="error">{{ errors.weight }}</span>
         </div>
 
         <div v-if="selectedType == 'Furniture'" class="conditional-field">
-          <label>Width:</label>
-          <input type="number" v-model="inputwidth"/>
+          <label for="width">Width:</label>
+          <input type="number" id="width" v-model="inputwidth"/>
           <span v-if="errors.width" class="error">{{ errors.width }}</span>
 
-          <label>Height:</label>
-          <input type="number" v-model="inputheight" />
+          <label for="height">Height:</label>
+          <input type="number" id="height" v-model="inputheight" />
           <span v-if="errors.height" class="error">{{ errors.height }}</span>
 
-          <label>Length:</label>
-          <input type="number" v-model="inputlenght"/>
+          <label for="lenght">Length:</label>
+          <input type="number" id="lenght" v-model="inputlenght"/>
           <span v-if="errors.length" class="error">{{ errors.length }}</span>
         </div>
       </form>
