@@ -42,7 +42,7 @@ export default {
     async getProduct() {
    try {
       const response = await axios.get("https://scandiweb123.site/display", {
-         headers: { 'Accept': 'application/json' 
+         headers: { 'Accept': 'application/json' } 
       });
       this.products = response.data; 
       console.log(this.products); 
