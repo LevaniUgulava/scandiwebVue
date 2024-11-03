@@ -45,13 +45,13 @@
         </div>
 
         <div v-if="selectedType == 'Furniture'" class="conditional-field">
-          <label for="width">Width:</label>
-          <input type="number" id="width" v-model="inputwidth"/>
-          <span v-if="errors.width" class="error">{{ errors.width }}</span>
-
           <label for="height">Height:</label>
           <input type="number" id="height" v-model="inputheight" />
           <span v-if="errors.height" class="error">{{ errors.height }}</span>
+
+          <label for="width">Width:</label>
+          <input type="number" id="width" v-model="inputwidth"/>
+          <span v-if="errors.width" class="error">{{ errors.width }}</span>
 
           <label for="lenght">Length:</label>
           <input type="number" id="lenght" v-model="inputlenght"/>
