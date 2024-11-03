@@ -18,7 +18,8 @@
         <p>{{ item.sku }}</p>
         <p>{{ item.name }}</p>
         <p>{{ item.price }}$</p>
-        <p>{{ item.details }}</p>
+        <p v-if="item.type === 'Furniture'">Dimension:{{ decodeDetails(item.details,item.type) }}</p>
+       <p v-else>{{ decodeDetails(item.details,item.type) }}</p>
       </div>
     </div>
   </div>
@@ -41,27 +42,33 @@ export default {
     async getProduct() {
    try {
       const response = await axios.get("https://scandiweb123.site/display", {
-         headers: { 'Accept': 'application/json' } // Force JSON response
+         headers: { 'Accept': 'application/json' 
       });
-      this.products = response.data; // Only assign JSON data
-      console.log(this.products); // Verify the structure of the returned data
+      this.products = response.data; 
+      console.log(this.products); 
    } catch (error) {
       console.log(error);
    }
 },
 
 
-    decodeDetails(details) {
-      try {
-        const parsedDetails = JSON.parse(details);
-        return Object.entries(parsedDetails)
-          .map(([key, value]) => `${key}: ${value}`)
-          .join(', ');
-      } catch (error) {
-        console.error('Error decoding details:', error);
-        return 'Invalid details';
-      }
-    },
+decodeDetails(details, type) {
+  try {
+    const parsedDetails = JSON.parse(details);
+    
+    if (type === "Furniture") {
+      const { length, width, height } = parsedDetails;
+      return `${length}x${width}x${height}`;
+    }
+    
+    return Object.entries(parsedDetails)
+      .map(([key, value]) => `${key}: ${value}`)
+      .join(', ');
+  } catch (error) {
+    console.error('Error decoding details:', error);
+    return 'Invalid details';
+  }
+},
     async massDelete() {
       const response = await axios.post('https://scandiweb123.site/massdelete', { idarray: this.selectedProducts });
       console.log(response);
